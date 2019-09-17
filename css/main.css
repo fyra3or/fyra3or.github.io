@@ -6,6 +6,32 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
+:root {
+  /* Measure, the maximum length of any text */
+  --measure: 60ch;
+
+  /* Vertical rythm */
+  --ratio: 1.414;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+
+  --font-size-base: var(--s0);
+  --font-size-small: var(--s-1);
+  --font-size-medium: var(--s3);
+  --font-size-large: var(--s5);
+  --font-size-xlarge: var(--s6);
+}
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -107,45 +133,64 @@ html {
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-family: 'Roboto', sans-serif;
+  line-height: var(--ratio);
 }
 
 body {
   background: #222;
   color: #fff;
-  font: 400 100%/1.5 'Open Sans', sans-serif; /* 16px/24px */
+  font-size: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 120%;
+  }
 }
 
 .wrapper {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 60ch;
   padding: 0 1em;
   width: 100%;
 }
 
+.contact {
+  margin: var(--s3) 0;
+}
+
+.contact > * {
+  display: inline-block;
+  margin-bottom: var(--s1);
+}
+
 h1 {
-  font-size: 2em;
+  line-height: 1;
+  font-size: var(--font-size-medium);
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: var(--s3);
+  font-family: 'Glass Antiqua', cursive;
 }
 
 @media screen and (min-width: 600px) {
   h1 {
-    font-size: 3.5em;
+    font-size: var(--font-size-large);
+    margin-top: var(--s5);
   }
 }
 
 h2 {
-  border-bottom: 1px dashed #666;
-  border-top: 1px dashed #666;
-  font-size: 1em;
-  font-weight: 700;
-  padding: 0.83em 0;
-  text-transform: uppercase;
+  font-size: var(--s3);
+  font-weight: normal;
 }
 
-@media screen and (min-width: 600px) {
+/*@media screen and (min-width: 600px) {
   h2 {
     font-size: 1.5em;
   }
-}
+}*/
 
 h3 {
   font-size: 1em;
@@ -157,17 +202,21 @@ h3 + p {
   margin-top: 0;
 }
 
+p {
+  margin: var(--s1) 0;
+}
+
 a {
   color: #fff;
 }
 
 main section {
-  margin-bottom: 2em;
+  margin-bottom: var(--s4);
 }
 
 @media screen and (min-width: 600px) {
   main section {
-    margin-bottom: 4em;
+    margin-bottom: var(--s5);
   }
 }
 
