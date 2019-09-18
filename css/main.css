@@ -55,14 +55,17 @@ h1 {
   font-size: var(--font-size-medium);
   font-weight: normal;
   line-height: 1;
-  margin-bottom: 0;
+  margin-bottom: var(--s1);
   margin-top: var(--s3);
+  transform: rotate(-3deg);
+  text-transform: lowercase;
 }
 
 @media screen and (min-width: 600px) {
   h1 {
     font-size: var(--font-size-large);
-    margin-top: var(--s5);
+    margin-bottom: var(--s2);
+    margin-top: var(--s4);
   }
 }
 
@@ -70,8 +73,15 @@ h2,
 h3 {
   font-size: var(--font-size-base);
   font-weight: 700;
-  margin-bottom: var(--s0);
-  margin-top: var(--s3);
+  margin-bottom: var(--s-2);
+  margin-top: var(--s2);
+}
+
+@media screen and (min-width: 600px) {
+  h2,
+  h3 {
+    margin-top: var(--s3);
+  }
 }
 
 p {
@@ -125,8 +135,14 @@ b {
 .box {
   border-radius: var(--border-radius);
   background-color: var(--color-dark);
-  margin: var(--s1) calc(var(--s0) * -1);
+  margin: var(--s0) calc(var(--s0) * -1);
   padding: var(--s0);
+}
+
+@media screen and (min-width: 600px) {
+  .box {
+    margin: var(--s1) calc(var(--s0) * -1);
+  }
 }
 
 .box h2,
