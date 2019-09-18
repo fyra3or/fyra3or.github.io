@@ -1,16 +1,4 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 :root {
-  /* Measure, the maximum length of any text */
-  --measure: 60ch;
-
-  /* Vertical rythm */
   --ratio: 1.414;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
@@ -24,104 +12,17 @@
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
   --s6: calc(var(--s5) * var(--ratio));
-
   --font-size-base: var(--s0);
   --font-size-small: var(--s-1);
   --font-size-medium: var(--s3);
   --font-size-large: var(--s5);
-  --font-size-xlarge: var(--s6);
+  --color-main: #618985;
+  --color-light: #96bbbb;
+  --color-dark: #4d5357;
+  --color-yellow: #f2e3bc;
+  --color-brown: #c19875;
+  --border-radius: var(--s-3);
 }
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-
-html {
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*
- * Remove the gap between images, videos, audio and canvas and the bottom of
- * their containers: h5bp.com/i/440
- */
-
-audio,
-canvas,
-img,
-video {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
-}
-
-/* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 
 * {
   box-sizing: border-box;
@@ -133,45 +34,29 @@ html {
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fira Mono', monospace;
   line-height: var(--ratio);
 }
 
 body {
-  background: #222;
+  background: var(--color-main);
   color: #fff;
   font-size: 100%;
 }
 
 @media screen and (min-width: 600px) {
   body {
-    font-size: 120%;
+    font-size: 110%;
   }
 }
 
-.wrapper {
-  margin: 0 auto;
-  max-width: 60ch;
-  padding: 0 1em;
-  width: 100%;
-}
-
-.contact {
-  margin: var(--s3) 0;
-}
-
-.contact > * {
-  display: inline-block;
-  margin-bottom: var(--s1);
-}
-
 h1 {
-  line-height: 1;
+  font-family: 'Glass Antiqua', cursive;
   font-size: var(--font-size-medium);
   font-weight: normal;
+  line-height: 1;
   margin-bottom: 0;
   margin-top: var(--s3);
-  font-family: 'Glass Antiqua', cursive;
 }
 
 @media screen and (min-width: 600px) {
@@ -186,16 +71,10 @@ h2 {
   font-weight: normal;
 }
 
-/*@media screen and (min-width: 600px) {
-  h2 {
-    font-size: 1.5em;
-  }
-}*/
-
 h3 {
-  font-size: 1em;
+  font-size: var(--font-size-base);
   font-weight: 700;
-  margin-bottom: 0;
+  margin-bottom: var(--s0);
 }
 
 h3 + p {
@@ -203,7 +82,11 @@ h3 + p {
 }
 
 p {
-  margin: var(--s1) 0;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+  background-color: var(--color-dark);
+  margin: var(--s1) calc(var(--s0) * -1);
+  padding: var(--s0);
 }
 
 a {
@@ -211,7 +94,7 @@ a {
 }
 
 main section {
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s3);
 }
 
 @media screen and (min-width: 600px) {
@@ -221,25 +104,58 @@ main section {
 }
 
 i {
-  color: #666;
+  color: var(--color-yellow);
+  font-style: normal;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li {
-  display: inline;
-  margin-right: 0.5em;
+b {
+  font-weight: 700;
 }
 
-li a {
-  border: 1px solid #666;
-  border-radius: 5px;
+.wrapper {
+  margin: 0 auto;
+  max-width: 60ch;
+  padding: 0 var(--s1);
+  width: 100%;
+}
+
+.tags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.tags li {
+  margin-bottom: var(--s0);
+  margin-right: var(--s0);
+  padding: 0;
+}
+
+.contact {
+  margin: var(--s2) 0 0;
+}
+
+.contact li {
   display: inline-block;
-  padding: 0.8em;
+  font-weight: 700;
+  margin-bottom: var(--s-1);
+  margin-right: var(--s-1);
+}
+
+.contact li a {
+  border: 1px solid var(--color-light);
+  border-radius: var(--border-radius);
+  display: inline-block;
+  padding: var(--s0);
   text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -247,136 +163,66 @@ li a {
   transition: all 0.2s ease-out;
 }
 
-li a:hover {
+.contact li a:hover {
   border: 1px solid #fff;
 }
 
 @media screen and (min-width: 600px) {
-  li {
-    margin-right: 1em;
+  .contact li {
+    margin-bottom: 0;
+    margin-right: var(--s1);
   }
-  li a {
-    padding: 1em;
+  .contact li a {
+    padding: var(--s1);
   }
 }
 
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Image replacement
- */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+.bar {
+  align-items: center;
+  display: flex;
+  width: 100%;
 }
 
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
+.bar div {
+  flex: 1;
+  height: var(--s-2);
 }
 
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
+.bg-light {
+  background-color: var(--color-light);
 }
 
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+.bg-main {
+  background-color: var(--color-main);
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+.bg-dark {
+  background-color: var(--color-dark);
 }
 
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
+.bg-yellow {
+  background-color: var(--color-yellow);
 }
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+.bg-brown {
+  background-color: var(--color-brown);
 }
 
-.clearfix:after {
-    clear: both;
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 /* ==========================================================================
