@@ -108,7 +108,14 @@ b {
   font-weight: 700;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .wrapper {
+  flex: 1;
   margin: 0 auto;
   max-width: 60ch;
   padding: 0 var(--s1);
