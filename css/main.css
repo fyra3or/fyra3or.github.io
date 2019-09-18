@@ -238,7 +238,7 @@ b {
   align-items: center;
   background: #618985;
   bottom: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   left: 0;
   position: fixed;
@@ -249,6 +249,12 @@ b {
 
 .browserupgrade > * {
   max-width: 60ch;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .browserupgrade {
+    display: flex;
+  }
 }
 
 ::-moz-selection {
