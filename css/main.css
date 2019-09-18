@@ -234,6 +234,23 @@ b {
   width: 1ch;
 }
 
+.browserupgrade {
+  align-items: center;
+  background: #618985;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.browserupgrade > * {
+  max-width: 60ch;
+}
+
 ::-moz-selection {
     background: var(--color-light);
     text-shadow: none;
