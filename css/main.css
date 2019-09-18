@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  background: var(--color-main);
+  background: linear-gradient(0deg, var(--color-main) 0%, var(--color-light) 100%);
   color: #fff;
   font-size: 100%;
 }
@@ -66,27 +66,16 @@ h1 {
   }
 }
 
-h2 {
-  font-size: var(--s3);
-  font-weight: normal;
-}
-
+h2,
 h3 {
   font-size: var(--font-size-base);
   font-weight: 700;
   margin-bottom: var(--s0);
-}
-
-h3 + p {
-  margin-top: 0;
+  margin-top: var(--s3);
 }
 
 p {
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
-  background-color: var(--color-dark);
-  margin: var(--s1) calc(var(--s0) * -1);
-  padding: var(--s0);
+  margin: 0;
 }
 
 a {
@@ -104,7 +93,7 @@ main section {
 }
 
 i {
-  color: var(--color-yellow);
+  color: #fff;
   font-style: normal;
 }
 
@@ -126,6 +115,22 @@ b {
   width: 100%;
 }
 
+.box {
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark);
+  margin: var(--s1) calc(var(--s0) * -1);
+  padding: var(--s0);
+}
+
+.box h2,
+.box h3 {
+  margin: 0;
+}
+
+.box p {
+  color: var(--color-yellow);
+}
+
 .tags {
   align-items: center;
   display: flex;
@@ -141,7 +146,7 @@ b {
 }
 
 .contact {
-  margin: var(--s2) 0 0;
+  margin: var(--s1) 0 0;
 }
 
 .contact li {
@@ -152,19 +157,20 @@ b {
 }
 
 .contact li a {
-  border: 1px solid var(--color-light);
+  background-color: var(--color-main);
+  color: var(--color-yellow);
   border-radius: var(--border-radius);
   display: inline-block;
   padding: var(--s0);
   text-decoration: none;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 .contact li a:hover {
-  border: 1px solid #fff;
+  background-color: var(--color-dark);
 }
 
 @media screen and (min-width: 600px) {
@@ -208,21 +214,36 @@ b {
   background-color: var(--color-brown);
 }
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+.has-cursor::after {
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background: #fff;
+  content: "";
+  display: inline-block;
+  margin-left: 1ch;
+  height: 1.4ex;
+  width: 1ch;
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: var(--color-light);
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: var(--color-light);
     text-shadow: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ==========================================================================
