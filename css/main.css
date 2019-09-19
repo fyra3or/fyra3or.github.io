@@ -179,8 +179,16 @@ b {
   margin-right: var(--s-1);
 }
 
-.contact li a {
+@media screen and (min-width: 600px) {
+  .contact li {
+    margin-bottom: 0;
+    margin-right: var(--s1);
+  }
+}
+
+.button {
   background-color: var(--color-main);
+  box-shadow: 0 0 0 var(--color-yellow);
   color: var(--color-yellow);
   border-radius: var(--border-radius);
   display: inline-block;
@@ -192,16 +200,21 @@ b {
   transition: all 0.1s ease;
 }
 
-.contact li a:hover {
+.button:focus {
   background-color: var(--color-dark);
+  box-shadow: var(--s-2) var(--s-2) 0 var(--color-yellow);
+  outline: none;
+}
+
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: var(--color-dark);
+    box-shadow: var(--s-2) var(--s-2) 0 var(--color-yellow);
+  }
 }
 
 @media screen and (min-width: 600px) {
-  .contact li {
-    margin-bottom: 0;
-    margin-right: var(--s1);
-  }
-  .contact li a {
+  .button {
     padding: var(--s1);
   }
 }
