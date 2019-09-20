@@ -15,7 +15,8 @@
   --font-size-base: var(--s0);
   --font-size-small: var(--s-1);
   --font-size-medium: var(--s3);
-  --font-size-large: var(--s5);
+  --font-size-large: var(--s4);
+  --font-size-xlarge: var(--s5);
   --color-main: #618985;
   --color-light: #96bbbb;
   --color-dark: #4d5357;
@@ -52,20 +53,20 @@ body {
 
 h1 {
   font-family: 'Glass Antiqua', cursive;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-large);
   font-weight: normal;
-  line-height: 1;
-  margin-bottom: var(--s1);
-  margin-top: var(--s3);
+  line-height: 0.7;
+  margin-bottom: var(--s2);
+  margin-top: var(--s2);
   transform: rotate(-3deg);
   text-transform: lowercase;
 }
 
 @media screen and (min-width: 600px) {
   h1 {
-    font-size: var(--font-size-large);
-    margin-bottom: var(--s2);
-    margin-top: var(--s4);
+    font-size: var(--font-size-xlarge);
+    margin-bottom: var(--s3);
+    margin-top: var(--s5);
   }
 }
 
