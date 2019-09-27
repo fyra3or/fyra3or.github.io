@@ -17,12 +17,10 @@
   --font-size-medium: var(--s3);
   --font-size-large: var(--s4);
   --font-size-xlarge: var(--s5);
-  --color-main: #618985;
-  --color-light: #96bbbb;
-  --color-dark: #4d5357;
-  --color-yellow: #f2e3bc;
-  --color-brown: #c19875;
-  --border-radius: var(--s-3);
+  --color-main: #1B9AAA;
+  --color-dark: #050505;
+  --color-light: #F5F1E3;
+  --color-brown: #DDDBCB;
 }
 
 * {
@@ -40,9 +38,10 @@ html {
 }
 
 body {
-  background: linear-gradient(0deg, var(--color-main) 0%, var(--color-light) 100%);
-  color: #fff;
+  background: #fff;
+  color: var(--color-dark);
   font-size: 100%;
+  margin: 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -52,14 +51,23 @@ body {
 }
 
 h1 {
-  font-family: 'Glass Antiqua', cursive;
+  font-family: 'Abril Fatface', cursive;
   font-size: var(--font-size-large);
   font-weight: normal;
-  line-height: 0.7;
+  line-height: 1;
   margin-bottom: var(--s2);
   margin-top: var(--s2);
-  transform: rotate(-3deg);
-  text-transform: lowercase;
+  max-width: 8ch;
+  text-transform: uppercase;
+}
+
+h1::after {
+  background-color: var(--color-main);
+  content: "";
+  display: block;
+  height: var(--s0);
+  margin-top: var(--s1);
+  width: var(--s5);
 }
 
 @media screen and (min-width: 600px) {
@@ -70,42 +78,8 @@ h1 {
   }
 }
 
-h2,
-h3 {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  margin-bottom: var(--s-2);
-  margin-top: var(--s2);
-}
-
-@media screen and (min-width: 600px) {
-  h2,
-  h3 {
-    margin-top: var(--s3);
-  }
-}
-
 p {
   margin: 0;
-}
-
-a {
-  color: #fff;
-}
-
-main section {
-  margin-bottom: var(--s3);
-}
-
-@media screen and (min-width: 600px) {
-  main section {
-    margin-bottom: var(--s5);
-  }
-}
-
-i {
-  color: #fff;
-  font-style: normal;
 }
 
 ul,
@@ -115,44 +89,110 @@ li {
   padding: 0;
 }
 
-b {
-  font-weight: 700;
-}
-
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.wrapper {
-  flex: 1;
-  margin: 0 auto;
-  max-width: 60ch;
-  padding: 0 var(--s1);
-  width: 100%;
-}
-
-.box {
-  border-radius: var(--border-radius);
-  background-color: var(--color-dark);
-  margin: var(--s0) calc(var(--s0) * -1);
-  padding: var(--s0);
-}
-
-@media screen and (min-width: 600px) {
-  .box {
-    margin: var(--s1) calc(var(--s0) * -1);
+@media screen and (min-width: 960px) {
+  .page {
+    flex-direction: row;
   }
 }
 
-.box h2,
-.box h3 {
+.header,
+.main {
+  flex: 1;
+}
+
+.header {
+  background: #fff;
+  padding-left: var(--s2);
+  padding-right: var(--s2);
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    padding-left: var(--s4);
+    padding-right: var(--s4);
+  }
+}
+
+.main {
+  background-image: url('../images/jocke.jpg');
+  background-repeat: no-repeat;
+  background-position: top 100px left;
+  background-size: cover;
+  background-color: var(--color-main);
+  background-blend-mode: luminosity;
+  min-height: 800px;
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    min-height: 800px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .main {
+    background-position: top left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 0;
+  }
+}
+
+.about {
+  background: var(--color-dark);
+  margin-bottom: var(--s4);
+  padding: var(--s2);
+}
+
+@media screen and (min-width: 600px) {
+  .about {
+    padding: var(--s4);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about {
+    margin-left: calc(var(--s4) * -1);
+  }
+}
+
+@media print {
+  .about {
+    margin-left: 0;
+  }
+}
+
+.about__content {
+  max-width: 50ch;
+}
+
+.about__content h2 {
+  color: #fff;
+  font-size: var(--font-size-base);
+  font-weight: 700;
   margin: 0;
 }
 
-.box p {
-  color: var(--color-yellow);
+.about__content p {
+  color: var(--color-light);
+}
+
+/* Link to frontpage on 404-page */
+.about__content a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.tags,
+.contact {
+  max-width: 50ch;
 }
 
 .tags {
@@ -170,7 +210,13 @@ b {
 }
 
 .contact {
-  margin: var(--s1) 0 0;
+  margin: var(--s1) 0 var(--s2);
+}
+
+@media screen and (min-width: 600px) {
+  .contact {
+    margin: var(--s1) 0 var(--s4);
+  }
 }
 
 .contact li {
@@ -189,10 +235,10 @@ b {
 
 .button {
   background-color: var(--color-main);
-  box-shadow: 0 0 0 var(--color-yellow);
-  color: var(--color-yellow);
-  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 var(--color-light);
+  color: #fff;
   display: inline-block;
+  font-weight: 400;
   padding: var(--s0);
   text-decoration: none;
   -webkit-transition: all 0.1s ease;
@@ -203,14 +249,14 @@ b {
 
 .button:focus {
   background-color: var(--color-dark);
-  box-shadow: var(--s-2) var(--s-2) 0 var(--color-yellow);
+  box-shadow: var(--s-2) var(--s-2) 0 var(--color-light);
   outline: none;
 }
 
 @media (any-hover: hover) {
   .button:hover {
     background-color: var(--color-dark);
-    box-shadow: var(--s-2) var(--s-2) 0 var(--color-yellow);
+    box-shadow: var(--s-2) var(--s-2) 0 var(--color-brown);
   }
 }
 
@@ -218,37 +264,6 @@ b {
   .button {
     padding: var(--s1);
   }
-}
-
-.bar {
-  align-items: center;
-  display: flex;
-  width: 100%;
-}
-
-.bar div {
-  flex: 1;
-  height: var(--s-2);
-}
-
-.bg-light {
-  background-color: var(--color-light);
-}
-
-.bg-main {
-  background-color: var(--color-main);
-}
-
-.bg-dark {
-  background-color: var(--color-dark);
-}
-
-.bg-yellow {
-  background-color: var(--color-yellow);
-}
-
-.bg-brown {
-  background-color: var(--color-brown);
 }
 
 .has-cursor::after {
@@ -266,7 +281,7 @@ b {
 
 .browserupgrade {
   align-items: center;
-  background: #618985;
+  background: #fff;
   bottom: 0;
   display: none;
   justify-content: center;
@@ -288,13 +303,13 @@ b {
 }
 
 ::-moz-selection {
-    background: var(--color-light);
-    text-shadow: none;
+  background: var(--color-light);
+  text-shadow: none;
 }
 
 ::selection {
-    background: var(--color-light);
-    text-shadow: none;
+  background: var(--color-light);
+  text-shadow: none;
 }
 
 @keyframes pulse {
@@ -306,74 +321,19 @@ b {
   }
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  @page {
+    margin: 0.5cm;
+  }
 }
