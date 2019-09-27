@@ -17,10 +17,11 @@
   --font-size-medium: var(--s3);
   --font-size-large: var(--s4);
   --font-size-xlarge: var(--s5);
-  --color-main: #1B9AAA;
+  --hue: 186;
+  --color-main: hsla(var(--hue), 73%, 45%, 1);
+  --color-main-light: hsla(var(--hue), 73%, 45%, 0.3);
   --color-dark: #050505;
   --color-light: #F5F1E3;
-  --color-brown: #DDDBCB;
 }
 
 * {
@@ -29,6 +30,7 @@
 }
 
 html {
+  --hue: 187;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
@@ -249,14 +251,14 @@ li {
 
 .button:focus {
   background-color: var(--color-dark);
-  box-shadow: var(--s-2) var(--s-2) 0 var(--color-light);
+  box-shadow: var(--s-2) var(--s-2) 0 var(--color-main-light);
   outline: none;
 }
 
 @media (any-hover: hover) {
   .button:hover {
     background-color: var(--color-dark);
-    box-shadow: var(--s-2) var(--s-2) 0 var(--color-brown);
+    box-shadow: var(--s-2) var(--s-2) 0 var(--color-main-light);
   }
 }
 

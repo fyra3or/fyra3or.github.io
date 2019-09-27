@@ -67,5 +67,17 @@
     </p>
   </div>
 
+  <script>
+    const increaseHue = (currentHue) => {
+      setTimeout(() => {
+        const hue = currentHue === 360 ? 0 : currentHue + 1;
+        document.documentElement.style.setProperty('--hue', hue);
+        increaseHue(hue);
+      }, 500);
+    };
+    const hue = getComputedStyle(document.documentElement).getPropertyValue('--hue');
+    increaseHue(+hue);
+  </script>
+
 </body>
 </html>
